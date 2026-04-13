@@ -9,8 +9,8 @@ int main()
   InitWindow(windowWidth, windowHeight, "move");
 
   const float radius { 50 };
+  const float speed  { 200 };
   Vector2 position   { windowWidth / 2 - radius, windowHeight / 2 - radius };
-  Vector2 speed      { 200, 200 };
   Vector2 direction  { 0.0f, 0.0f };
 
 
@@ -45,10 +45,10 @@ int main()
 
     // update position
 
-    Vector2Normalize(direction);
+    direction = Vector2Normalize(direction);
 
-    position.x += direction.x * speed.x * dt;
-    position.y += direction.y * speed.y * dt;
+    position.x += direction.x * speed * dt;
+    position.y += direction.y * speed * dt;
 
     // bound checking
 
