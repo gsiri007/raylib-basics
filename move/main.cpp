@@ -18,7 +18,6 @@ int main()
   {
     auto dt { GetFrameTime() };
 
-
     direction = { 0.0f, 0.0f }; // reset the direction each frame
 
     // input
@@ -45,7 +44,7 @@ int main()
 
     // update position
 
-    direction = Vector2Normalize(direction);
+    direction = Vector2Normalize(direction); // normalize direction vector for smooth diagonal movement
 
     position.x += direction.x * speed * dt;
     position.y += direction.y * speed * dt;
