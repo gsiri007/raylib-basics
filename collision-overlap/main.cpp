@@ -6,7 +6,7 @@ int main()
   const float windowWidth  { 1920 };
   const float windowHeight { 1080 };
 
-  InitWindow(windowWidth, windowHeight, "colllision-overlap");
+  InitWindow(windowWidth, windowHeight, "collision-overlap");
 
   Rectangle recOne { 100, 100, 200, 400 };
   const Rectangle recTwo { 500, 250, 200, 400 };
