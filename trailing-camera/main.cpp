@@ -57,7 +57,7 @@ int main()
   };
 
   Camera2D camera;
-  camera.zoom = 1;
+  camera.zoom   = 1;
   camera.target = player.position;
   camera.offset = Vector2 { halfWindowWidth, halfWindowHeight };
 
@@ -87,6 +87,33 @@ int main()
     if (IsKeyDown(KEY_A))
     {
       player.direction.x = -1;
+    }
+
+    if (IsKeyPressed(KEY_UP))
+    {
+      if (camera.zoom < 2)
+      {
+        camera.zoom += 0.1;
+      }
+    }
+
+    if (IsKeyPressed(KEY_DOWN))
+    {
+      // avoid camera from wrapping
+      if (camera.zoom > 0.1)
+      {
+        camera.zoom -= 0.1;
+      }
+    }
+
+    if (IsKeyDown(KEY_RIGHT))
+    {
+      camera.rotation += 0.5;
+    }
+
+    if (IsKeyDown(KEY_LEFT))
+    {
+      camera.rotation -= 0.5;
     }
 
     // update player position
